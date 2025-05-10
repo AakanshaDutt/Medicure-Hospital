@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://jakarta.ee/xml/ns/jakartaee 
+         http://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>Hospital Management System</display-name>
+
+    <!-- Servlet Config -->
+    <servlet>
+        <servlet-name>AuthServlet</servlet-name>
+        <servlet-class>in.sp.index.AuthServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AppointmentServlet</servlet-name>
+        <servlet-class>in.sp.index.AppointmentServlet</servlet-class>
+    </servlet>
+
+    <!-- MainServlet Config -->
+    <servlet>
+        <servlet-name>MainServlet</servlet-name>
+        <servlet-class>in.sp.index.MainServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet Mappings -->
+    <servlet-mapping>
+        <servlet-name>AuthServlet</servlet-name>
+        <url-pattern>/auth</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AppointmentServlet</servlet-name>
+        <url-pattern>/bookappointment</url-pattern>
+    </servlet-mapping>
+
+    <!-- MainServlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>MainServlet</servlet-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- Specific Page Mappings -->
+    <servlet-mapping>
+        <servlet-name>MainServlet</servlet-name>
+        <url-pattern>/doctors</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>MainServlet</servlet-name>
+        <url-pattern>/services</url-pattern>
+    </servlet-mapping>
+
+    <!-- Welcome files -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>main.jsp</welcome-file>
+        <welcome-file>verifyotp.jsp</welcome-file>
+        <welcome-file>doctors.jsp</welcome-file>
+        <welcome-file>bookappointment.jsp</welcome-file>
+        <welcome-file>services.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
